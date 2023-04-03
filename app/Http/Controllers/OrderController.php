@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Order;
+use App\Models\Product;
 use App\Models\Cart;
+use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Services\CartService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; //use DB;
@@ -68,7 +70,7 @@ class OrderController extends Controller
     		
     	} catch ( \Throwable $th) {
     		//DB::rollBack();
-    		Log::info($th->getMessage());
+    		//Log::info($th->getMessage());
     		return response([
 	    		'error' => $th->getMessage()
 	    	], 500);
