@@ -38,6 +38,7 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     { 
     	try {
+            $path = '';
     		if($request->hasFile('image')){
     			$image = $request->file('image');
     			$path = $image->store('products');

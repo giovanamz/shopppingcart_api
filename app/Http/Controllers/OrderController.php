@@ -6,7 +6,7 @@ use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderDetail;
-use App\Services\CartService;
+use App\services\CartService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; //use DB;
 use Illuminate\Support\Facades\Log;
