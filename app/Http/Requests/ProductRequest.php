@@ -26,7 +26,7 @@ class ProductRequest extends FormRequest
         return [
             'name' => 'required',
             'price' => 'required|min:1|numeric',
-            'stock' => 'numeric',
+            'stock' => 'numeric|required',
             'category_id' => 'required',
         ];
     }
@@ -44,6 +44,7 @@ class ProductRequest extends FormRequest
             'price.min' => 'El precio minimo del producto debe ser 1',
             'price.numeric' => 'El precio debe contener un valor numerico',
             'stock' => 'El stock debe contener un valor numerico',
+            'stock.required' => 'El stock es requerido',
             'category_id' => 'La categoria del producto es requerida',
         ];
     }
