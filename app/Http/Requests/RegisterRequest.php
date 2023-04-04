@@ -23,11 +23,20 @@ class RegisterRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
             'fullname'=> 'required',
             'email'=> 'required|email',
             'password'=> 'required|min:6'
         ];
+
+        // Si es diferente a Post
+        if($this->method() !== 'PUT')
+        {
+            $rules ['email' ] = 'required|email|unique:users,email,' . $this->id;
+
+        }
+
+        return $rules;    ;
     }
 
     /**
